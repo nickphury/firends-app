@@ -67,4 +67,16 @@ public class FriendController {
         else
             return friendService.findAll();
     }
+    
+    @GetMapping("/friends/search/{fisrtName}/{lastName}")
+    public Iterable<Friend> findByQuery2(@PathVariable String firstName, @PathVariable String lastName) {
+        if ( firstName != null && lastName != null)
+            return friendService.findByFirstNameAndLastName(firstName, lastName);
+        else if (firstName != null)
+            return friendService.findByFirstName(firstName);
+        else if (lastName != null)
+            return friendService.findByLastName(lastName);
+        else
+            return friendService.findAll();
+    }
 }
