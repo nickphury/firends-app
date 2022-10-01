@@ -2,9 +2,7 @@ package com.wiredbrain.friends.controllers;
 
 import com.wiredbrain.friends.models.Friend;
 import com.wiredbrain.friends.services.FriendService;
-import com.wiredbrain.friends.utils.ErrorMessage;
 import com.wiredbrain.friends.utils.FieldErrorMessage;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -17,9 +15,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-//@RestController
+@RestController
 public class FriendController {
-    @Autowired
+
     private FriendService friendService;
 
     @PostMapping("/friends")
